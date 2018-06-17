@@ -1,0 +1,62 @@
+header{
+    width: 100%;
+    background-color: rgb(68, 68, 179);
+    box-sizing: border-box;
+    padding: 5px;
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.425);
+    margin-bottom: 20px;
+}
+
+header input, header form{
+    display: inline-block;
+    white-space: unset
+}
+
+header form{
+    width: 60%;
+}
+
+header input:first-of-type{
+    width: 90%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    padding: 3px
+}
+
+header input:last-of-type{
+    background-color: transparent;
+    border: none;
+    padding: 3px 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+}
+
+header input::placeholder{
+    color: rgb(255, 255, 255);
+}
+
+header input:last-of-type:hover{
+    border-bottom: 1px solid white;
+}
+
+header nav{
+    display: inline-block;
+    width: 30%;
+    text-align:right;
+    margin-right: 10%;
+}
+
+header nav li{
+    display: inline-block;
+}
+
+header a{
+    padding: 3px 10px;
+    color: white;
+}
+
+header a:hover{
+    border-bottom: 1px solid white;
+}
