@@ -38,7 +38,8 @@ section app-title{
 }
 
 section app-title:hover{
-    transform: scale(1.18)
+    transform: scale(1.5);
+    z-index: 2;
 }
 
 div p{

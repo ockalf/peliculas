@@ -20,7 +20,7 @@ export class TitleComponent implements OnInit {
   }
   
   getStyle(){
-    return this.sanitizer.bypassSecurityTrustStyle(`background-image: url(' ${this.cover}')`)
+    return this.cover != 'N/A'? this.sanitizer.bypassSecurityTrustStyle(`background-image: url(' ${this.cover}')`):null;
   }
   
 

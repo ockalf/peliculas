@@ -2,8 +2,8 @@ article{
     position: relative;
     width: 130px;
     height: 200px;  ;
-    background-color: rgb(68, 68, 68);
-    border: 1px solid grey;
+    background-image: url('../../assets/cover.jpg');
+    border: 1px solid #3c3b3b;
     background-size: cover;
 }
 
