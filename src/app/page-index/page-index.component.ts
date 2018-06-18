@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MovieService } from '../movie.service';
 import {Element} from '../element';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -8,17 +9,25 @@ import {Element} from '../element';
   templateUrl: './page-index.component.html',
   styleUrls: ['./page-index.component.css']
 })
-export class PageIndexComponent implements OnInit {
+export class PageIndexComponent {
 
-  searchTerm: string = 'deadpool'
-  resultSet: Array<Element>;
+  @Input() searchTerm: string;
+  @Input() resultSet: Array<Element>;
 
-  constructor(private movieService: MovieService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.resultSet = this.movieService.getMovies(this.searchTerm, 'movies')
 
-    console.log(this.resultSet)
+
+  getMovies(){
+    return this.resultSet.filter(elm => elm.getType() == 'movie' )
+  }
+
+  getSeries (){
+    return this.resultSet.filter(elm => elm.getType() == 'series' )
+  }
+
+  getOtros (){
+    return this.resultSet.filter(elm => elm.getType() == 'game' )
   }
 
 }

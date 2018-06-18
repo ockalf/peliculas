@@ -1,18 +1,26 @@
 <main>
 
-  <p>Results to:</p>
-  <h1>DeadPool</h1>
+  <p>Results for:</p>
+  <h1>{{searchTerm}}</h1>
 
-  <h2>Movies</h2>
-  <section>
-    <app-title *ngFor="let movie of resultSet" [title]="movie.title" [year]="movie.year" [cover]="movie.cover" [imbdID]="movie.imbdID"></app-title>
+  <div *ngIf="resultSet.length!=0">
+
+    <h2>Movies</h2>
+    <section>
+      <app-title *ngFor="let movie of getMovies()" [title]="movie.title" [year]="movie.year" [cover]="movie.cover" [imbdID]="movie.imbdID"></app-title>
+    </section>
     
-  </section>
-
-  <h2>Series</h2>
-  <section>
-    <app-title [title]="'deadpool 2'" [year]="2018" [cover]="'cover.jpg'"></app-title>
-    <app-title [title]="'deadpool 2'" [year]="2018" [cover]="'cover.jpg'"></app-title>
-    <app-title [title]="'deadpool 2'" [year]="2018" [cover]="'cover.jpg'"></app-title>
-  </section>
+    <h2>Series</h2>
+    <section>
+      <app-title *ngFor="let movie of getSeries()" [title]="movie.title" [year]="movie.year" [cover]="movie.cover" [imbdID]="movie.imbdID"></app-title>
+    </section>
+    
+    <h2>Otros</h2>
+    <section>
+      <app-title *ngFor="let movie of getOtros()" [title]="movie.title" [year]="movie.year" [cover]="movie.cover" [imbdID]="movie.imbdID"></app-title>
+    </section>
+  </div>
+  <div *ngIf="resultSet.length==0">
+    <p>No matches for: {{searchTerm}}</p>
+  </div>
 </main>

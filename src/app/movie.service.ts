@@ -12,26 +12,28 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getMovies(search:string, type:string){
+  getMovies(search:string){
 
     let ret: Array<Element> = []
 
     this.http.get(this.urlData+`&s=${search}`).subscribe((data:any)=>{
 
-      data.Search.forEach(result => {
-        ret.push(
-          new Element(
-            result.imbdID,
-            result.Title,
-            result.Year,
-            result.Poster
+      if(data.Search){
+        data.Search.forEach(result => {
+          ret.push(
+            new Element(
+              result.imbdID,
+              result.Title,
+              result.Year,
+              result.Poster,
+              result.Type
+            )
           )
-        )
-
-      });
+        });
+      }
     })
 
-    return ret
+    return ret;
   }
 
 }

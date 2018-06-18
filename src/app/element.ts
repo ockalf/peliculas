@@ -12,7 +12,7 @@ export class Element {
     private type: string;
 
 
-	constructor($imbdID: string, $title: string, $year: number, $cover: string, $resume?: string, $relase?: Date, $runTime?: string, $genre?: String, $director?: string, $rating?: string, $type?: string) {
+	constructor($imbdID: string, $title: string, $year: number, $cover: string, $type?: string, $resume?: string, $relase?: Date, $runTime?: string, $genre?: String, $director?: string, $rating?: string ) {
 		this.imbdID = $imbdID;
 		this.title = $title;
 		this.year = $year;
@@ -26,4 +26,7 @@ export class Element {
 		this.type = $type;
 	}
 
+	getType():string{
+		return this.type
+	}
 }

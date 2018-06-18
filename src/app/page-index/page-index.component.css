@@ -14,6 +14,7 @@ h1{
     font-size: 60px;
     margin-top: -20px;
     margin-bottom: 20px;
+    text-transform: capitalize;
 }
 
 h2{
@@ -38,4 +39,10 @@ section app-title{
 
 section app-title:hover{
     transform: scale(1.18)
+}
+
+div p{
+    font-size: 67px;
+    text-align: center;
+    color: #353535
 }

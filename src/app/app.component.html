@@ -1,8 +1,10 @@
 <header>
-  <form action="null">
-    <input type="text" id="search" placeholder="Search">
-    <input type="submit" value="Go!">
-  </form>
+  <div>
+    <input type="text" id="search" placeholder="Search" #input (keydown.enter)="sendValue(input.value)" >
+    <input type="submit" value="Go!" (click)="sendValue(input.value)">
+  </div>
+    
+
 
   <nav>
     <ul>
@@ -15,4 +17,4 @@
 
 <!-- <router-oulet></router-oulet> -->
 
-<app-page-index></app-page-index>
+<app-page-index [searchTerm]="this.searchTerm" [resultSet]="this.resultSet"></app-page-index>
